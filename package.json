@@ -1,0 +1,73 @@
+{
+	"name": "Lisp",
+	"version": "0.1.7",
+	"publisher": "mattn",
+	"description": "Lisp syntax highlight",
+	"author": {
+		"name": "Yasuhiro Matsumoto (a.k.a mattn)"
+	},
+	"icon": "images/lisp.png",
+	"categories": [
+		"Languages",
+		"Snippets"
+	],
+	"license": "MIT",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mattn/vscode-lisp"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"typescript": "^1.6.2",
+		"vscode": "0.10.x"
+	},
+	"engines": {
+		"vscode": "^0.10.10"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "lisp",
+				"aliases": [
+					"Lisp",
+					"lisp"
+				],
+				"extensions": [
+					".lisp",
+					".lsp",
+					".cl",
+					".asd",
+					".ros"
+				],
+				"configuration": "./Lisp.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "lisp",
+				"scopeName": "source.lisp",
+				"path": "./syntaxes/Lisp.tmLanguage"
+			}
+		],
+		 "snippets": [
+			{
+				"language": "lisp",
+				"path": "./snippets/Lisp.libfileio.json"
+			},
+			{
+				"language": "lisp",
+				"path": "./snippets/Lisp.acad.json"
+			},
+			{
+				"language": "lisp",
+				"path": "./snippets/Lisp.libparser.json"
+			}
+        ]
+	},
+	"readmeFilename": "README.md",
+	"bugs": {
+		"url": "https://github.com/mattn/vscode-lisp/issues"
+	},
+	"__metadata": null
+}

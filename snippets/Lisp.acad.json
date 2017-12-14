@@ -1,0 +1,72 @@
+{
+    "if": {
+        "prefix": "if",
+        "body": [
+            "(if ${1:(${2:logic_operand} ${3:val1} ${4:val2})}",
+            "\t${5:exp}",
+            ")"
+        ],
+        "description": "if statement"
+    },
+	"while":{
+			"prefix": "while",
+			"body": ["(while ( ${1:logic_operand} ${2:val1} ${3:val2})",
+						"\t${4:exp}",
+						")"
+			],
+			"description": "while statement"
+	},
+	"ssname":{
+		"prefix": "ssname",
+		"body": "(ssname ${1:ss} ${2:ss_len} )",
+		"description": "Get $ss_len element in $ss pickset"
+	},
+	"load-lib":{
+        "prefix": "load-lib",
+        "body": [   "(if (not(load-lib ${1|\"libFileIO\",\"libExcel\",\"libGoogle\",\"libHTTP\",\"libParser\"|} ))",
+                    "(progn",
+                        "\t(princ \"Failed to load library!\")",
+                        "\t(exit)",
+                        "))"
+                ],
+        "description": "Loading libraries\nChecking offline and online libraries too"
+    },
+    "ss-loop":{
+        "prefix": "ssloop",
+        "body": [   "(setq ss (ssget \"_X\" '( ${1:filter} )",
+                    "(setq ss_len (sslenght ss))",
+                    "(while (<= 0 (setq ss_len (1- ss_len)))",
+                        "\t(setq hnd (ssname ss_len ss))",
+                        "\t(setq ent (entget hnd))",
+                        "\t${2:mode code here}",
+                        ")"
+        ],
+        "description": "Snippet for looping trougth all entity"
+    },
+    "progn":{
+        "prefix":"progn",
+        "body":[    "(progn",
+                    "\t${1:code_here}",
+                    ")"  
+        ],
+        "description": "snippet for progn block"
+    },
+    "foreach":{
+        "prefix":"foreach",
+        "body":[    "(foreach ${1:element} ${2:Dlist}",
+                    "\t${3:code_here}",
+                    ")"
+        ],
+        "description":"Snippet for foreach loop"
+
+    },
+    "defun":{
+        "prefix":"defun",
+        "body":[    "(defun ${1:FunctionName} (${2:arguments})",
+                    "\t ${3:code_here}",
+                    ")"
+        ],
+        "description":"Snippet for defun"
+    }
+	
+}

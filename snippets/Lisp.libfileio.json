@@ -1,0 +1,18 @@
+{
+    "CreateNewFile":{
+		"prefix": "file::CreateNewFile",
+		"body": "(file::CreateNewFile ${1:path} ${2:header})",
+		"description": "Create a new file pointed by $path and inserting the $header to it.\n\n$path [str] : Fullpath of file\n$header [list] : File header\n\n"
+	},
+	"AppendFile":{
+		"prefix": "file::AppendFile",
+		"body": "(file::AppendFile ${1:path} ${2:header})",
+		"description": "Append data to existing file pointed by $path.\n\n$path [str] : Fullpath of file\n$header [list] : File header\n\n If the file does not exist create a new one and instert $header to it If the file already exist the header won't be inserted."
+	},
+	"ReadFile":{
+		"prefix":"file::ReadFile",
+		"body":"(file::ReadFile ${1:path}",
+		"desciption":"Open a file for read\n\n $path : Fullpath of a file"
+	}
+	
+}

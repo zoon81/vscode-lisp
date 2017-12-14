@@ -1,0 +1,18 @@
+{
+    "Parser::parse":{
+        "prefix":"Parser::parse",
+        "body":[    "(Parser::parse \t(list \t(cons \"FILE\"  ${1:fn})",
+                    "\t\t\t\t\t\t(cons \"delimeter\" ${2:\";\"})",
+                    "\t\t\t\t\t\t(cons \"hasheader\" ${3|nil,T|})",
+                    "\t\t\t\t\t\t(cons \"filter\"  ${4:(cons ${5:match_collumn_index} ${6:\"match_value\"})})))"
+
+        ],
+        "description":"Parsing simple textfiles where data delimited by a special character.Column counting start from 0"
+    },
+    "Parser::JSON.getvalues":{
+        "prefix":"Parser::JSON.getvalues",
+        "body":"(Parser::JSON.getvalues ${1:json_key} ${2:jsondata})",
+        "desciption":"Get a specific value from json based on $json_key."
+    }
+   
+}
